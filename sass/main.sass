@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap')
 @import "header"
 @import "hero"
+@import "work"
 
 *
   margin: 0
@@ -10,7 +11,37 @@
   box-shadow: none
 body
   background: #141414
-
+  transition-duration: 1s
+.color
+  background: #FFFFFF
+  .header
+    .container
+      .header__logo
+        &:after, &:before
+          background: #141414
+        &:hover
+          &:after, &:before
+            background: #E74C3C
+          a
+            color: #E74C3C
+        div
+          background: #FFFFFF
+        a
+          color: #141414
+      .header__menu
+        .header__link
+          &:hover
+            a
+              color: #E74C3C
+            .header__link-bg
+              div
+                opacity: 0.2
+          a
+            color: #141414
+          .header__link-bg
+            div
+              background: #FFFFFF
+              opacity: 1
 .container
   display: flex
   width: 100%
