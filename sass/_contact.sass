@@ -1,0 +1,250 @@
+.contact
+  .container
+    margin: auto
+    justify-content: space-between
+    .contact__left
+      display: flex
+      width: 100%
+      max-width: 400px
+      flex-direction: column
+      transition-duration: 2s
+      h1
+        font-family: Maven Pro, sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 38px
+        line-height: 45px
+        margin: 0 auto 30px auto
+        letter-spacing: 0.6px
+        color: #141414
+        transition-duration: 2s
+        transform: scale(0)
+        opacity: 0
+        visibility: hidden
+      .contact__form
+        display: flex
+        flex-direction: column
+        .contact__input-wrapper
+          display: flex
+          &:not(:last-child)
+            margin-bottom: 20px
+          .contact-input
+            resize: none
+            width: 100%
+            padding: 12px 14px
+            font-family: Maven Pro, sans-serif
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 100%
+            color: #141414
+            outline: none
+            appearance: none
+            border-radius: 0
+            border: 1px solid #141414
+            box-shadow: rgba(0,0,0,0.1)
+            transition-duration: .4s
+            &:focus
+              background: rgba(240,240,240,1)
+              border-color: #E74C3C
+          .contact-btn
+            margin: 0 auto
+            background: #141414
+            border-radius: 30px
+            display: flex
+            border: 1px solid #141414
+            position: relative
+            overflow: hidden
+            &:hover
+              span
+                &:last-child
+                  transform: translateX(-50%) translateY(-50%) scaleX(1)
+            span
+              &:first-child
+                padding: 10px 20px
+                cursor: pointer
+                transition-duration: 1s
+                font-family: Maven Pro, sans-serif
+                font-style: normal
+                font-weight: bold
+                font-size: 16px
+                line-height: 100%
+                position: relative
+                z-index: 2
+                border-radius: 30px
+                color: #FFFFFF
+              &:last-child
+                position: absolute
+                left: 50%
+                top: 50%
+                border-radius: 30px
+                transform: translateX(-50%) translateY(-50%) scaleX(0)
+                width: 100%
+                height: 100%
+                background: #E74C3C
+                transition-duration: 1s
+    .contact__right
+      margin-right: auto
+      margin-left: 200px
+      padding-top: 68px
+      display: flex
+      flex-direction: column
+      p
+        width: 100%
+        font-family: Maven Pro, sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 18px
+        line-height: 150%
+        color: #141414
+        max-width: 300px
+        transform: translateX(100%) scale(0)
+        transition-duration: 2s
+        filter: blur(10px)
+      .contact__links
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 20px 40px
+        margin-top: 40px
+        margin-right: auto
+        transition-duration: 2s
+        transform: translateY(200%) scale(0)
+        .contact-link
+          margin-right: auto
+          max-width: 300px
+          position: relative
+          &:after
+            content: ''
+            position: absolute
+            left: -50%
+            width: 100%
+            height: 100%
+            background: #141414
+            transform: translateX(-50%)
+            top: 0
+            transition-duration: 1s
+            z-index: 2
+            pointer-events: none
+            opacity: 0
+          &:before
+            pointer-events: none
+            content: ''
+            position: absolute
+            right: -50%
+            z-index: 2
+            transform: translateX(50%)
+            width: 100%
+            transition-duration: 1s
+            height: 100%
+            background: #141414
+            opacity: 0
+            top: 0
+          &:hover
+            &:after
+              transform: translateX(0)
+              opacity: 0.2
+            &:before
+              transform: translateX(0)
+              opacity: 0.2
+            span
+              &:last-child
+                letter-spacing: 3px
+                color: #E74C3C
+          span
+            font-family: Maven Pro, sans-serif
+            font-style: normal
+            font-weight: bold
+            font-size: 14px
+            line-height: 100%
+            color: #141414
+            transition-duration: 1s
+            opacity: 0
+            visibility: hidden
+            position: relative
+            z-index: 3
+            &:last-child
+              opacity: 1
+              visibility: visible
+              position: absolute
+              left: 50%
+              transform: translateX(-50%) translateY(-50%)
+              top: 50%
+
+
+.contact_active
+  .container
+    .contact__left
+      h1
+        transform: scale(1)
+        opacity: 1
+        visibility: visible
+      .contact__form
+        .contact__input-wrapper
+          .contact-input
+            animation-name: input-one
+            animation-duration: 2s
+          &:nth-child(2n)
+            .contact-input
+              animation-name: input-two
+              animation-duration: 2s
+            .contact-btn
+              animation-name: input-btn
+              animation-duration: 2s
+    .contact__right
+      p
+        transform: translateX(0) scale(1)
+        filter: none
+        transition-duration: 2s
+      .contact__links
+        transform: translateY(0) scale(1)
+        .contact-link
+          &:after
+            opacity: 0
+          &:before
+            opacity: 0
+
+
+
+
+
+@keyframes input-one
+  0%
+    transform: translateX(-100%)
+    opacity: 0
+    visibility: hidden
+    background: #141414
+    border: 1px solid #FFFFFF
+  100%
+    transform: translateX(0)
+    opacity: 1
+    visibility: visible
+    background: #FFFFFF
+    border: 1px solid #141414
+
+@keyframes input-two
+  0%
+    transform: translateX(100%)
+    opacity: 0
+    visibility: hidden
+    background: #141414
+    border: 1px solid #FFFFFF
+  100%
+    transform: translateX(0)
+    opacity: 1
+    visibility: visible
+    background: #FFFFFF
+    border: 1px solid #141414
+
+@keyframes input-btn
+  0%
+    transform: translateX(100%)
+    opacity: 0
+    visibility: hidden
+    background: #FFFFFF
+    border: 1px solid #FFFFFF
+  100%
+    transform: translateX(0)
+    opacity: 1
+    visibility: visible
+    background: #141414
+    border: 1px solid #141414

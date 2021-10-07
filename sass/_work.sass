@@ -3,35 +3,119 @@
     .container
       display: flex
       justify-content: space-between
+      &:hover
+        .work__img
+          position: relative
+          &:after
+            opacity: 0.3
+            visibility: visible
+            transform: scale(1.05)
+          img
+            transform: scale(1.05)
+        .work__text
+          .work__title
+            span
+              color: #E74C3C
+          .work__sub
+            span
+              color: #E74C3C
     .work__img
       width: 100%
       height: 342px
+      transition-duration: 2s
+      transform: scale(0) translateY(-100%)
+      filter: blur(20px)
       max-width: 553px
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        opacity: 0
+        visibility: hidden
+        transition-duration: 1s
+        width: 100%
+        height: 100%
+        background: #E74C3C
+        z-index: 2
       img
+        transition-duration: 1s
         width: 100%
         height: 100%
         object-fit: cover
     .work__text
       display: flex
+      transform: translateY(200%)
+      transition-duration: 2s
+      filter: blur(20px)
+      opacity: 0
+      visibility: hidden
       flex-direction: column
       max-width: 553px
       width: 100%
       .work__title
         span
+          transition-duration: 1s
           font-family: Maven Pro, sans-serif
           font-style: normal
           font-weight: 500
           font-size: 28px
           line-height: 42px
           letter-spacing: 0.4px
-          color: #141414
+          color: #FFFFFF
       .work__sub
         margin-top: 15px
         span
+          transition-duration: 1s
           font-family: Maven Pro, sans-serif
           font-style: normal
           font-weight: normal
           font-size: 18px
           line-height: 32px
           letter-spacing: 0.36px
-          color: #141414
+          color: #FFFFFF
+  .fp-controlArrow
+    transition-duration: 0.4s
+    &:hover
+      transform: scale(0.8)
+      border-color: transparent transparent transparent #E74C3C!important
+  .fp-prev
+    &:hover
+      border-color: transparent #E74C3C transparent transparent!important
+
+.work_active
+  .slide
+    .container
+      .work__img
+        transform: scale(1) translateY(0)
+        filter: none
+      .work__text
+        transform: translateY(0)
+        opacity: 1
+        visibility: visible
+        filter: none
+  .fp-controlArrow
+    animation-name: arrow
+    animation-duration: 2s
+
+
+@keyframes arrow
+  0%
+    transform: scale(0)
+    opacity: 0
+    visibility: hidden
+  100%
+    opacity: 1
+    visibility: visible
+    transform: scale(1)
+
+
+
+
+
+
+
+
+
+
+

@@ -16,6 +16,22 @@ $(window).on("load" , function () {
             $('body').addClass('color')
             $('.hero').removeClass('hero_active')
         }
+        if ($('.work').hasClass('active')) {
+            $('.work').addClass('work_active')
+            $('body').removeClass('color')
+        } else {
+            $('.work').removeClass('work_active')
+        }
+        if ($('.about').hasClass('active')) {
+            $('.about').addClass('about_active')
+        } else {
+            $('.about').removeClass('about_active')
+        }
+        if ($('.contact').hasClass('active')) {
+            $('.contact').addClass('contact_active')
+        } else {
+            $('.contact').removeClass('contact_active')
+        }
     })
 })
 
